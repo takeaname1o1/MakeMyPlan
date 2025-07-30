@@ -1,102 +1,77 @@
-# Smart Itinerary Planner
+# 🌍 MakeMyPlan
 
-## Overview
+**MakeMyPlan** is a full-stack web application that creates **AI-powered travel itineraries** in seconds.  
+Just enter your **destination, trip duration, budget, and interests**, and MakeMyPlan will use **Google Gemini AI** to generate a **personalized day-by-day travel plan** for you.  
 
-A full-stack web application that generates AI-powered travel itineraries. Users input their travel destination, duration, budget, and interests, and the application uses Google Gemini AI to create personalized day-by-day travel plans.
+🎯 **[👉 Live Website](https://makemyplan-1tvu.onrender.com/)** – Try it out now!  
+🎥 **[▶ Watch Sample Video](sample.mp4)** – Quick walkthrough of generating an itinerary.  
 
-## User Preferences
+---
 
-Preferred communication style: Simple, everyday language.
+## ✨ Features
+✅ **AI-generated itineraries** – Personalized plans for any trip.  
+✅ **Simple & intuitive UI** – Just enter a few details, and you’re ready.  
+✅ **Budget-friendly suggestions** – Matches your spending preferences.  
+✅ **Day-by-day plans** – Clear travel schedules at your fingertips.  
 
-## System Architecture
+---
 
-### Frontend Architecture
-- **Framework**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with shadcn/ui component library
-- **State Management**: TanStack Query (React Query) for server state
-- **Routing**: Wouter for client-side routing
-- **Build Tool**: Vite
-- **Form Handling**: React Hook Form with Zod validation
+## 🏗 System Architecture
 
-### Backend Architecture
-- **Runtime**: Node.js with TypeScript
-- **Framework**: Express.js
-- **Database**: PostgreSQL with Drizzle ORM (ready for integration)
-- **AI Integration**: Google Gemini API
-- **Session Storage**: In-memory storage (MemStorage class) with PostgreSQL support ready
+### 🎨 Frontend
+- **React 18 + TypeScript** – Modern, fast, and type-safe.
+- **Tailwind CSS + shadcn/ui** – Clean and accessible styling.
+- **TanStack Query (React Query)** – Handles server state efficiently.
+- **Wouter** – Lightweight client-side routing.
+- **React Hook Form + Zod** – Smooth form handling and validation.
 
-### Key Components
+### ⚙️ Backend
+- **Node.js + Express.js (TypeScript)** – Robust API server.
+- **PostgreSQL + Drizzle ORM** – Database ready for production.
+- **Google Gemini API** – AI-powered itinerary generation.
+- **In-Memory Storage** – Easy development setup, with DB support ready.
 
-#### Frontend Components
-- **Home Page**: Main interface with travel form and itinerary display
-- **UI Components**: Comprehensive shadcn/ui component library including buttons, forms, cards, toast notifications
-- **Form Validation**: Zod schemas for type-safe form validation
-- **API Client**: Custom query client with error handling
+### 🔄 Shared Components
+- **Zod schemas** – End-to-end type safety between frontend and backend.
 
-#### Backend Components
-- **API Routes**: RESTful endpoint for itinerary generation (`/api/generate-itinerary`)
-- **AI Service**: Google Gemini integration for natural language processing
-- **Storage Layer**: Abstracted storage interface supporting both memory and database persistence
-- **Request Validation**: Server-side validation using Zod schemas
+---
 
-#### Shared Components
-- **Schema Definitions**: Shared TypeScript types and Zod validation schemas
-- **Type Safety**: End-to-end type safety between frontend and backend
+## 🔀 How It Works (Data Flow)
+1️⃣ **Enter trip details** (destination, duration, budget, interests).  
+2️⃣ **Frontend validation** with Zod.  
+3️⃣ **API call** to `/api/generate-itinerary`.  
+4️⃣ **Express server** validates data & builds AI prompt.  
+5️⃣ **Google Gemini** generates a personalized itinerary.  
+6️⃣ **Server returns structured data** to the frontend.  
+7️⃣ **UI updates** to show your itinerary (with a toast notification).  
 
-## Data Flow
+---
 
-1. **User Input**: User fills out travel form (destination, duration, budget, interests)
-2. **Frontend Validation**: Client-side validation using Zod schemas
-3. **API Request**: Form data sent to `/api/generate-itinerary` endpoint
-4. **Server Processing**: Express server validates request and constructs AI prompt
-5. **AI Generation**: Google Gemini API generates personalized itinerary
-6. **Response Handling**: Server processes AI response and returns structured data
-7. **UI Update**: Frontend displays generated itinerary with toast notification
+## 📦 Key Dependencies
+- **Google Gemini API** – AI-powered travel planning.
+- **Neon PostgreSQL** – Database hosting (ready for scaling).
+- **Tailwind CSS & shadcn/ui** – UI styling and components.
+- **Vite** – Lightning-fast frontend build tool.
+- **Drizzle ORM** – Type-safe database layer.
 
-## External Dependencies
+---
 
-### Core Dependencies
-- **Google Gemini API**: AI-powered itinerary generation
-- **Neon Database**: PostgreSQL hosting (configured but not yet active)
-- **Radix UI**: Accessible component primitives
-- **Tailwind CSS**: Utility-first styling framework
+## 🚀 Deployment
+- **Frontend**: Built with Vite → served from Express.
+- **Backend**: Bundled with esbuild → runs as Node server.
+- **Database**: PostgreSQL via `DATABASE_URL`.
+- **AI**: Google Gemini API (secured with `GEMINI_API_KEY`).
 
-### Development Tools
-- **Vite**: Fast build tool and development server
-- **TSX**: TypeScript execution for development
-- **Drizzle Kit**: Database migrations and schema management
+---
 
-## Deployment Strategy
+## 📹 Demo Videos
+🎥 **[sample.mp4](sample.mp4)** – Full walkthrough of generating an itinerary.  
+🎥 **[sample.webm](sample.webm)** – Highlights of key features.  
 
-### Build Process
-- **Frontend**: Vite builds React application to `dist/public`
-- **Backend**: esbuild bundles TypeScript server to `dist/index.js`
-- **Database**: Drizzle handles schema migrations
+---
 
-### Environment Configuration
-- **Development**: Uses Vite dev server with Express API
-- **Production**: Serves static files from Express with API routes
-- **Database**: PostgreSQL connection via `DATABASE_URL` environment variable
-- **AI API**: Requires `GEMINI_API_KEY` environment variable
+## 🔗 Quick Links
+🌍 **Live Website:** [https://makemyplan-1tvu.onrender.com/](https://makemyplan-1tvu.onrender.com/)  
+📂 **Repo:** MakeMyPlan project files & structure.  
 
-### Key Architectural Decisions
-
-#### Storage Abstraction
-**Problem**: Need flexibility between development and production data storage
-**Solution**: Abstract storage interface (`IStorage`) with memory-based development storage and PostgreSQL production storage
-**Benefits**: Easy development setup, scalable production deployment
-
-#### Shared Type System
-**Problem**: Maintaining type consistency between frontend and backend
-**Solution**: Shared schema definitions in `/shared` directory using Zod
-**Benefits**: Compile-time type safety, reduced runtime errors, single source of truth
-
-#### Component Library Choice
-**Problem**: Need consistent, accessible UI components
-**Solution**: shadcn/ui built on Radix UI primitives
-**Benefits**: Accessible by default, customizable, TypeScript support
-
-#### AI Integration Strategy
-**Problem**: Secure API key management and reliable AI responses
-**Solution**: Server-side AI calls with environment variable configuration
-**Benefits**: API key security, server-side validation, error handling
+---
