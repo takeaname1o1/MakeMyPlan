@@ -3,7 +3,8 @@ import { FormEvent, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw"; // Renders HTML inside markdown
 import remarkGfm from "remark-gfm"; // Handles GitHub Flavored Markdown (tables, etc.)
-import logo from "@logo.png"; 
+import logo from '../logo.png';
+
 // Then use <img src={logo} ... />
 
 
