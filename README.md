@@ -1,11 +1,11 @@
 # 🌍 MakeMyPlan
-
+🎯 **[👉 Live Website](https://makemyplan-1tvu.onrender.com/)** 
 ![MakeMyPlan Demo](./super.gif)
 
 **MakeMyPlan** is a full-stack web application that creates **AI-powered travel itineraries** in seconds.  
 Just enter your **destination, trip duration, budget, and interests**, and MakeMyPlan will use **Google Gemini AI** to generate a **personalized day-by-day travel plan** for you.
 
-🎯 **[👉 Live Website](https://makemyplan-1tvu.onrender.com/)** – Try it out now!  
+
 
 ---
 
