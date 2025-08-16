@@ -38,4 +38,3 @@ Just enter your **destination, trip duration, budget, and interests**, and MakeM
 ## 🔗 Quick Links
 
 🌍 **Live Website:** [https://makemyplan-1tvu.onrender.com/](https://makemyplan-1tvu.onrender.com/)  
-📂 **Repo:** MakeMyPlan project files & structure  
